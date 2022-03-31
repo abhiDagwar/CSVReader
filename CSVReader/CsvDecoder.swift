@@ -14,6 +14,11 @@ class CsvDecoder {
             reloadTableView?()
         }
     }
+    private let dateFormatter: DateFormatter = {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "EEEE, MMM d"
+      return dateFormatter
+    }()
     
     func decodeCsvToObject(with csvArray: [[String]]?) {
         guard let csvArray = csvArray else {
@@ -29,8 +34,19 @@ class CsvDecoder {
                 let lastName = row[1]
                 let issueCount = row[2]
                 let dateOfBirth = row[3]
+                var fullName = ""
+                if !(firstName.isEmpty) && !(lastName.isEmpty) {
+                    fullName = firstName + " " + lastName
+                } else if (firstName.isEmpty) && !(lastName.isEmpty) {
+                    fullName = lastName
+                } else if !(firstName.isEmpty) && (lastName.isEmpty) {
+                    fullName = firstName
+                } else {
+                    fullName = "-"
+                }
+                
             
-                issuesData.append(Issue(firstName: firstName, lastName: lastName, issueCount: issueCount, issueDate: dateOfBirth))
+                issuesData.append(Issue(fullName: fullName, issueCount: issueCount, issueDate: dateOfBirth))
             }
             issues = issuesData
         }

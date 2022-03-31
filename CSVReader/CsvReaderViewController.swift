@@ -37,11 +37,14 @@ extension CsvReaderViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CsvTableView", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CsvTableViewCell", for: indexPath) as? CsvDetailsTableViewCell else {
+            fatalError()
+        }
         
         let cellData = csvDecoder.issues[indexPath.row]
-        cell.textLabel?.text = cellData.firstName
-        cell.detailTextLabel?.text = cellData.lastName
+        cell.fullNameLable?.text = cellData.fullName
+        cell.issueCountLable?.text = cellData.issueCount
+        cell.dateLable.text = cellData.issueDate
         
         return cell
     }

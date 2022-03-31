@@ -20,6 +20,7 @@
 		50A6B7B527F5A0E800AC81C1 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6B7B427F5A0E800AC81C1 /* Issue.swift */; };
 		50A6B7B727F5A16F00AC81C1 /* CsvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6B7B627F5A16F00AC81C1 /* CsvParser.swift */; };
 		50A6B7B927F5AB8500AC81C1 /* CsvDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6B7B827F5AB8500AC81C1 /* CsvDecoder.swift */; };
+		50A6B7BB27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		50A6B7B427F5A0E800AC81C1 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		50A6B7B627F5A16F00AC81C1 /* CsvParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvParser.swift; sourceTree = "<group>"; };
 		50A6B7B827F5AB8500AC81C1 /* CsvDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDecoder.swift; sourceTree = "<group>"; };
+		50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDetailsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				50A6B7B427F5A0E800AC81C1 /* Issue.swift */,
 				50A6B7B627F5A16F00AC81C1 /* CsvParser.swift */,
 				50A6B7B827F5AB8500AC81C1 /* CsvDecoder.swift */,
+				50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */,
 				5095C10D27F4698800F9520D /* Main.storyboard */,
 				5095C11027F4698900F9520D /* Assets.xcassets */,
 				5095C11227F4698900F9520D /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 			files = (
 				5095C10C27F4698800F9520D /* CsvReaderViewController.swift in Sources */,
 				50A6B7B927F5AB8500AC81C1 /* CsvDecoder.swift in Sources */,
+				50A6B7BB27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift in Sources */,
 				50A6B7B727F5A16F00AC81C1 /* CsvParser.swift in Sources */,
 				5095C10827F4698800F9520D /* AppDelegate.swift in Sources */,
 				5095C10A27F4698800F9520D /* SceneDelegate.swift in Sources */,

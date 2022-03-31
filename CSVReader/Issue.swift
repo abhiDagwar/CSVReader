@@ -8,8 +8,7 @@
 import Foundation
 
 struct Issue {
-    let firstName: String
-    let lastName: String
+    let fullName: String
     let issueCount: String
     let issueDate: String
 }
