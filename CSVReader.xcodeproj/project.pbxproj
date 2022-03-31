@@ -109,17 +109,15 @@
 		5095C10627F4698800F9520D /* CSVReader */ = {
 			isa = PBXGroup;
 			children = (
-				50A6B7B227F5631A00AC81C1 /* issue.csv */,
+				50A6B7C127F6128D00AC81C1 /* Resources */,
+				50A6B7C027F6125000AC81C1 /* Storyboard */,
+				50A6B7BF27F6124400AC81C1 /* Helper */,
+				50A6B7BE27F6123200AC81C1 /* Model */,
+				50A6B7BD27F6122800AC81C1 /* Controller */,
+				50A6B7BC27F6121D00AC81C1 /* View */,
 				5095C10727F4698800F9520D /* AppDelegate.swift */,
 				5095C10927F4698800F9520D /* SceneDelegate.swift */,
-				5095C10B27F4698800F9520D /* CsvReaderViewController.swift */,
-				50A6B7B427F5A0E800AC81C1 /* Issue.swift */,
-				50A6B7B627F5A16F00AC81C1 /* CsvParser.swift */,
-				50A6B7B827F5AB8500AC81C1 /* CsvDecoder.swift */,
-				50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */,
-				5095C10D27F4698800F9520D /* Main.storyboard */,
 				5095C11027F4698900F9520D /* Assets.xcassets */,
-				5095C11227F4698900F9520D /* LaunchScreen.storyboard */,
 				5095C11527F4698900F9520D /* Info.plist */,
 			);
 			path = CSVReader;
@@ -140,6 +138,56 @@
 				5095C12A27F4698900F9520D /* CSVReaderUITestsLaunchTests.swift */,
 			);
 			path = CSVReaderUITests;
+			sourceTree = "<group>";
+		};
+		50A6B7BC27F6121D00AC81C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50A6B7BD27F6122800AC81C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5095C10B27F4698800F9520D /* CsvReaderViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		50A6B7BE27F6123200AC81C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50A6B7B427F5A0E800AC81C1 /* Issue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		50A6B7BF27F6124400AC81C1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				50A6B7B627F5A16F00AC81C1 /* CsvParser.swift */,
+				50A6B7B827F5AB8500AC81C1 /* CsvDecoder.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		50A6B7C027F6125000AC81C1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5095C10D27F4698800F9520D /* Main.storyboard */,
+				5095C11227F4698900F9520D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		50A6B7C127F6128D00AC81C1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50A6B7B227F5631A00AC81C1 /* issue.csv */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
