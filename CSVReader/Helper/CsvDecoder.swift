@@ -14,11 +14,26 @@ class CsvDecoder {
             reloadTableView?()
         }
     }
-    private let dateFormatter: DateFormatter = {
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "EEEE, MMM d"
-      return dateFormatter
-    }()
+    
+    private func formatteDateOfBirth(from dateString: String, dateFormateString: String = "d MMM yyyy, h:mm a") -> String? {
+        
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale // save locale temporarily
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let date = dateFormatter.date(from: dateString)
+        
+        guard date != nil else {
+            assert(false, "no date found from string")
+            return ""
+        }
+        
+        dateFormatter.dateFormat = dateFormateString
+        dateFormatter.locale = tempLocale // reset the locale
+        let dateString = dateFormatter.string(from: date!)
+        print("EXACT_DATE : \(dateString)")
+        return dateString
+    }
     
     func decodeCsvToObject(with csvArray: [[String]]?) {
         guard let csvArray = csvArray else {
@@ -32,7 +47,7 @@ class CsvDecoder {
                 print(row.count)
                 let firstName = row[0]
                 let lastName = row[1]
-                let issueCount = row[2]
+                let issueCount = "Issue Count: \(row[2])"
                 let dateOfBirth = row[3]
                 var fullName = ""
                 if !(firstName.isEmpty) && !(lastName.isEmpty) {
@@ -45,10 +60,15 @@ class CsvDecoder {
                     fullName = "-"
                 }
                 
+                let formattedDateOfBirth = formatteDateOfBirth(from: dateOfBirth) ?? dateOfBirth
             
-                issuesData.append(Issue(fullName: fullName, issueCount: issueCount, issueDate: dateOfBirth))
+                issuesData.append(Issue(fullName: fullName, issueCount: issueCount, dateOfBirth: formattedDateOfBirth))
             }
             issues = issuesData
         }
+    }
+    
+    func getIssueCellView(at indexPath: IndexPath) -> Issue {
+        return issues[indexPath.row]
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 struct Issue {
     let fullName: String
     let issueCount: String
-    let issueDate: String
+    let dateOfBirth: String
 }
 
 typealias Issues = [Issue]

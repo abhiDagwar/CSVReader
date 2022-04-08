@@ -12,6 +12,14 @@ class CsvDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var fullNameLable: UILabel!
     @IBOutlet weak var issueCountLable: UILabel!
     @IBOutlet weak var dateLable: UILabel!
+    
+    var issueCellModel: Issue? {
+        didSet {
+            fullNameLable.text = issueCellModel?.fullName
+            issueCountLable.text = issueCellModel?.issueCount
+            dateLable.text = issueCellModel?.dateOfBirth
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +30,13 @@ class CsvDetailsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        fullNameLable.text = nil
+        issueCountLable.text = nil
+        dateLable.text = nil
     }
 
 }
