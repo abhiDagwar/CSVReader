@@ -13,7 +13,6 @@
 		5095C10F27F4698800F9520D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5095C10D27F4698800F9520D /* Main.storyboard */; };
 		5095C11127F4698900F9520D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5095C11027F4698900F9520D /* Assets.xcassets */; };
 		5095C11427F4698900F9520D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5095C11227F4698900F9520D /* LaunchScreen.storyboard */; };
-		5095C11F27F4698900F9520D /* CSVReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095C11E27F4698900F9520D /* CSVReaderTests.swift */; };
 		5095C12927F4698900F9520D /* CSVReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095C12827F4698900F9520D /* CSVReaderUITests.swift */; };
 		5095C12B27F4698900F9520D /* CSVReaderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095C12A27F4698900F9520D /* CSVReaderUITestsLaunchTests.swift */; };
 		50A6B7B327F5631A00AC81C1 /* issue.csv in Resources */ = {isa = PBXBuildFile; fileRef = 50A6B7B227F5631A00AC81C1 /* issue.csv */; };
@@ -21,6 +20,8 @@
 		50A6B7B727F5A16F00AC81C1 /* CsvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6B7B627F5A16F00AC81C1 /* CsvParser.swift */; };
 		50A6B7B927F5AB8500AC81C1 /* CsvDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6B7B827F5AB8500AC81C1 /* CsvDecoder.swift */; };
 		50A6B7BB27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */; };
+		50ADA55A2800533500243D6F /* CsvParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADA5592800533500243D6F /* CsvParserTest.swift */; };
+		50ADA55C2800534500243D6F /* CsvDecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADA55B2800534500243D6F /* CsvDecoderTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,6 @@
 		5095C11327F4698900F9520D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5095C11527F4698900F9520D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5095C11A27F4698900F9520D /* CSVReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5095C11E27F4698900F9520D /* CSVReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReaderTests.swift; sourceTree = "<group>"; };
 		5095C12427F4698900F9520D /* CSVReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5095C12827F4698900F9520D /* CSVReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReaderUITests.swift; sourceTree = "<group>"; };
 		5095C12A27F4698900F9520D /* CSVReaderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReaderUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		50A6B7B627F5A16F00AC81C1 /* CsvParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvParser.swift; sourceTree = "<group>"; };
 		50A6B7B827F5AB8500AC81C1 /* CsvDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDecoder.swift; sourceTree = "<group>"; };
 		50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		50ADA5592800533500243D6F /* CsvParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvParserTest.swift; sourceTree = "<group>"; };
+		50ADA55B2800534500243D6F /* CsvDecoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDecoderTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +128,8 @@
 		5095C11D27F4698900F9520D /* CSVReaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				5095C11E27F4698900F9520D /* CSVReaderTests.swift */,
+				50ADA5592800533500243D6F /* CsvParserTest.swift */,
+				50ADA55B2800534500243D6F /* CsvDecoderTest.swift */,
 			);
 			path = CSVReaderTests;
 			sourceTree = "<group>";
@@ -336,7 +339,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5095C11F27F4698900F9520D /* CSVReaderTests.swift in Sources */,
+				50ADA55C2800534500243D6F /* CsvDecoderTest.swift in Sources */,
+				50ADA55A2800533500243D6F /* CsvParserTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

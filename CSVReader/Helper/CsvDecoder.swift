@@ -25,7 +25,7 @@ class CsvDecoder {
         
         guard date != nil else {
             assert(false, "no date found from string")
-            return ""
+            return nil
         }
         
         dateFormatter.dateFormat = dateFormateString

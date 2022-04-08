@@ -26,8 +26,9 @@ class CSVReaderUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let _ = NSPredicate(format: "label beginswith 'Nick Novak'")
     }
 
     func testLaunchPerformance() throws {
