@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import CSVReader
 
 class CSVReaderUITests: XCTestCase {
 
@@ -22,13 +23,19 @@ class CSVReaderUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testSearchBar() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
         
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let _ = NSPredicate(format: "label beginswith 'Nick Novak'")
+        //let _ = NSPredicate(format: "label beginswith 'Nick Novak'")
+        let searchBar = XCUIApplication()
+        searchBar.accessibilityTraits = UIAccessibilityTraits.searchField
+
+        let searchfield = app.searchFields.element(boundBy: 0)
+        searchfield.tap()
+        app.searchFields["Search"].typeText("allen")
     }
 
     func testLaunchPerformance() throws {
