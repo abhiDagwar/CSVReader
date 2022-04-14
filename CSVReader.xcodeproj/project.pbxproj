@@ -22,6 +22,7 @@
 		50A6B7BB27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */; };
 		50ADA55A2800533500243D6F /* CsvParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADA5592800533500243D6F /* CsvParserTest.swift */; };
 		50ADA55C2800534500243D6F /* CsvDecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADA55B2800534500243D6F /* CsvDecoderTest.swift */; };
+		50ADA55E28044D3400243D6F /* CsvDocumentBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADA55D28044D3400243D6F /* CsvDocumentBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		50A6B7BA27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		50ADA5592800533500243D6F /* CsvParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvParserTest.swift; sourceTree = "<group>"; };
 		50ADA55B2800534500243D6F /* CsvDecoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDecoderTest.swift; sourceTree = "<group>"; };
+		50ADA55D28044D3400243D6F /* CsvDocumentBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvDocumentBrowser.swift; sourceTree = "<group>"; };
+		50ADA55F2804533B00243D6F /* CSVReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CSVReader.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,7 @@
 		5095C10627F4698800F9520D /* CSVReader */ = {
 			isa = PBXGroup;
 			children = (
+				50ADA55F2804533B00243D6F /* CSVReader.entitlements */,
 				50A6B7C127F6128D00AC81C1 /* Resources */,
 				50A6B7C027F6125000AC81C1 /* Storyboard */,
 				50A6B7BF27F6124400AC81C1 /* Helper */,
@@ -172,6 +176,7 @@
 			children = (
 				50A6B7B627F5A16F00AC81C1 /* CsvParser.swift */,
 				50A6B7B827F5AB8500AC81C1 /* CsvDecoder.swift */,
+				50ADA55D28044D3400243D6F /* CsvDocumentBrowser.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				5095C10C27F4698800F9520D /* CsvReaderViewController.swift in Sources */,
 				50A6B7B927F5AB8500AC81C1 /* CsvDecoder.swift in Sources */,
 				50A6B7BB27F60B2D00AC81C1 /* CsvDetailsTableViewCell.swift in Sources */,
+				50ADA55E28044D3400243D6F /* CsvDocumentBrowser.swift in Sources */,
 				50A6B7B727F5A16F00AC81C1 /* CsvParser.swift in Sources */,
 				5095C10827F4698800F9520D /* AppDelegate.swift in Sources */,
 				5095C10A27F4698800F9520D /* SceneDelegate.swift in Sources */,
@@ -507,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CSVReader/CSVReader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6XZF5J5YU4;
@@ -535,6 +542,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CSVReader/CSVReader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6XZF5J5YU4;

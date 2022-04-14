@@ -16,7 +16,7 @@ class CsvDetailsTableViewCell: UITableViewCell {
     var issueCellModel: Issue? {
         didSet {
             fullNameLable.text = issueCellModel?.fullName
-            issueCountLable.text = issueCellModel?.issueCount
+            issueCountLable.text = "Issue Count: \(issueCellModel?.issueCount ?? "")"
             dateLable.text = issueCellModel?.dateOfBirth
         }
     }

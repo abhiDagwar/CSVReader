@@ -14,6 +14,8 @@ class CsvDecoder {
             reloadTableView?()
         }
     }
+    var defaultIssues: Issues = []
+    var filteredIssues: Issues = []
     
     private func formatteDateOfBirth(from dateString: String, dateFormateString: String = "d MMM yyyy, h:mm a") -> String? {
         
@@ -47,7 +49,7 @@ class CsvDecoder {
                 print(row.count)
                 let firstName = row[0]
                 let lastName = row[1]
-                let issueCount = "Issue Count: \(row[2])"
+                let issueCount = row[2]
                 let dateOfBirth = row[3]
                 var fullName = ""
                 if !(firstName.isEmpty) && !(lastName.isEmpty) {
@@ -64,8 +66,29 @@ class CsvDecoder {
             
                 issuesData.append(Issue(fullName: fullName, issueCount: issueCount, dateOfBirth: formattedDateOfBirth))
             }
+            defaultIssues = issuesData
             issues = issuesData
         }
+    }
+    
+    func getDefaultIssues() {
+        issues = defaultIssues
+    }
+    
+    func getIssuesSectionCount() -> Int {
+        return 1
+    }
+    
+    func getIssuesRowCount() -> Int {
+        return issues.count
+    }
+    
+    func filteredContentForSearchText(_ searchText: String) {
+        filteredIssues = issues.filter { (issue: Issue) -> Bool in
+            return issue.fullName.lowercased().contains(searchText.lowercased())
+        }
+        
+        issues = filteredIssues
     }
     
     func getIssueCellView(at indexPath: IndexPath) -> Issue {
