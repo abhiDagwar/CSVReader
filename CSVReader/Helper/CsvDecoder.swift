@@ -15,6 +15,7 @@ protocol CsvDataSearchProtocol {
 }
 
 protocol CsvDataTableViewProtocol {
+    var issues: Issues { get }
     var reloadTableView: (() -> Void)? { get }
     
     func getIssuesSectionCount() -> Int
