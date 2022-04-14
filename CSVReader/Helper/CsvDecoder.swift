@@ -7,7 +7,22 @@
 
 import Foundation
 
-class CsvDecoder {
+protocol CsvDataSearchProtocol {
+    var defaultIssues: Issues { get }
+    var filteredIssues: Issues { get }
+    
+    func filteredContentForSearchText(_ searchText: String)
+}
+
+protocol CsvDataTableViewProtocol {
+    var reloadTableView: (() -> Void)? { get }
+    
+    func getIssuesSectionCount() -> Int
+    func getIssuesRowCount() -> Int
+    func getIssueCellView(at indexPath: IndexPath) -> Issue
+}
+
+class CsvDecoder: CsvDataSearchProtocol, CsvDataTableViewProtocol {
     var reloadTableView: (() -> Void)?
     var issues = Issues() {
         didSet {
