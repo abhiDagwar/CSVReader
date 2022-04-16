@@ -10,8 +10,12 @@ import XCTest
 
 class CSVReaderUITests: XCTestCase {
 
+    let app = XCUIApplication()
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        app.launch()
+        app.accessibilityTraits = UIAccessibilityTraits.searchField
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -24,18 +28,32 @@ class CSVReaderUITests: XCTestCase {
     }
 
     func testSearchBar() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        //let _ = NSPredicate(format: "label beginswith 'Nick Novak'")
-        let searchBar = XCUIApplication()
-        searchBar.accessibilityTraits = UIAccessibilityTraits.searchField
-
         let searchfield = app.searchFields.element(boundBy: 0)
         searchfield.tap()
         app.searchFields["Search"].typeText("allen")
+        app.buttons["Clear text"].tap()
+        app.buttons["Cancel"].tap()
+    }
+    
+    func testClearSearchResult() {
+        let searchfield = app.searchFields.element(boundBy: 0)
+        searchfield.tap()
+        app.searchFields["Search"].typeText("nick")
+        app.buttons["Clear text"].tap()
+    }
+    
+    func testCancelSearchResult() {
+        let searchfield = app.searchFields.element(boundBy: 0)
+        searchfield.tap()
+        app.buttons["Cancel"].tap()
+    }
+    
+    func testShowNoSearchResultFound() throws {
+        let searchfield = app.searchFields.element(boundBy: 0)
+        searchfield.tap()
+        app.searchFields["Search"].typeText("xavier")
+        app.buttons["OK"].tap()
     }
 
     func testLaunchPerformance() throws {
