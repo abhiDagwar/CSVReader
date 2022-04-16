@@ -100,7 +100,7 @@ class CsvDecoder: CsvDataSearchProtocol, CsvDataTableViewProtocol {
     }
     
     func filteredContentForSearchText(_ searchText: String) {
-        filteredIssues = issues.filter { (issue: Issue) -> Bool in
+        filteredIssues = defaultIssues.filter { (issue: Issue) -> Bool in
             return issue.fullName.lowercased().contains(searchText.lowercased())
         }
         
