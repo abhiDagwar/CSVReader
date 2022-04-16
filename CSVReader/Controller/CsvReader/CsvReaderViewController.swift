@@ -11,6 +11,7 @@ class CsvReaderViewController: UIViewController {
 
     @IBOutlet weak var csvTableView: UITableView!
     @IBOutlet weak var csvStatusLable: UILabel!
+    @IBOutlet weak var resultsLabel: UILabel!
     var csvDecoder = CsvDecoder()
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -81,8 +82,16 @@ class CsvReaderViewController: UIViewController {
 extension CsvReaderViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if csvDecoder.issues.count == 0 {
-            showAlert(with: "Error", message: "No data found.")
+            //showAlert(with: "Error", message: "No data found.")
+            resultsLabel.text = "No Issue Found"
+        } else {
+            if csvDecoder.issues.count == 1 {
+                resultsLabel.text = "Found \(csvDecoder.issues.count) Issue"
+            } else {
+                resultsLabel.text = "Found \(csvDecoder.issues.count) Issues"
+            }
         }
+        
         return csvDecoder.issues.count
     }
     
