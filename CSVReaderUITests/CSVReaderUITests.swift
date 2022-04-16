@@ -53,7 +53,6 @@ class CSVReaderUITests: XCTestCase {
         let searchfield = app.searchFields.element(boundBy: 0)
         searchfield.tap()
         app.searchFields["Search"].typeText("xavier")
-        app.buttons["OK"].tap()
     }
 
     func testLaunchPerformance() throws {
