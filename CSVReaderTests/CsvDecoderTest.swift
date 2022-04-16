@@ -31,7 +31,7 @@ class CsvDecoderTest: XCTestCase {
         let indexPath = IndexPath(row: 3, section: 0)
         let issueData = csvDecoder.getIssueCellView(at: indexPath)
         XCTAssertEqual(issueData.fullName, "Clay Rozendal")
-        XCTAssertEqual(issueData.issueCount, "Issue Count: 1")
+        XCTAssertEqual(issueData.issueCount, "1")
         XCTAssertEqual(issueData.dateOfBirth, "20 Sep 1990, 12:00 AM")
     }
 }
