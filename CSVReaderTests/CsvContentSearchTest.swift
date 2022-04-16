@@ -64,6 +64,14 @@ class CsvContentSearchTest: XCTestCase {
     func testFilteredContent() {
         systemUnderTest.csvDecoder.filteredContentForSearchText("car")
         XCTAssertEqual(systemUnderTest.csvDecoder.issues.count, 3)
+        XCTAssertEqual(systemUnderTest.csvDecoder.issues[1].fullName, "Carl Jackson")
+        
+        systemUnderTest.csvDecoder.filteredContentForSearchText("carlo")
+        XCTAssertEqual(systemUnderTest.csvDecoder.issues.count, 2)
+        XCTAssertEqual(systemUnderTest.csvDecoder.issues[1].fullName, "Carlos Daly")
+        
+        systemUnderTest.csvDecoder.filteredContentForSearchText("carlos s")
+        XCTAssertEqual(systemUnderTest.csvDecoder.issues.count, 1)
         XCTAssertEqual(systemUnderTest.csvDecoder.issues[0].fullName, "Carlos Soltero")
     }
     
